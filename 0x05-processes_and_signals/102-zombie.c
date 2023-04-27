@@ -3,7 +3,8 @@
 #include <stdlib.h>
 
 /**
- * infinite_while - loops infinitely to keep the program running
+ * infinite_while - loops infinitely to keep the program running,
+ * 
  *
  * Return: always 0
  */
@@ -18,6 +19,7 @@ int infinite_while(void)
 
 /**
  * main - creates five zombie processes using fork() system call
+ * 
  *
  * Return: always 0
  */
@@ -34,13 +36,11 @@ int main(void)
 		if (pid == 0)
 		{
 			// print a message indicating a zombie process has been created
-			printf("Child process created as a zombie, PID: %d\n", getpid());
+			printf("Zombie process created, PID: %d\n", getpid());
 			return (0);
 		}
 	}
-
 	// loop infinitely to keep the program running
 	infinite_while();
-
 	return (0);
 }
