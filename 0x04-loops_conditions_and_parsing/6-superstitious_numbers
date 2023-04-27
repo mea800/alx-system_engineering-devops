@@ -2,7 +2,6 @@
 # This script displays numbers from 1 to 20 with "bad luck" messages for certain values.
 # Set the initial counter to 1.
 counter=1
-
 # While the counter is less than or equal to 20, loop through the following statements.
 while [ $counter -le 20 ]
 do
