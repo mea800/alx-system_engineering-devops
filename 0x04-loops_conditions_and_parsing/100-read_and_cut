@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# This script displays the content of the file /etc/passwd.
-
+# Script to display usernames, user IDs, and home directories from /etc/passwd.
+# Read each line of the /etc/passwd file and extract relevant fields.
 while IFS=: read -r user
 do
+    # Use the cut command to extract username, user ID, and home directory.
     echo "$user" | cut -f 1,3,6 -d ':'
 done < "/etc/passwd"

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# This script groups visitors by IP and HTTP status code, and displays,
-# the data.
-
+# This script extracts IP addresses and HTTP status codes from an Apache access log file, 
+# groups them by count, and displays the results.
+# Use awk to extract IP addresses and status codes, then sort and count the unique occurrences.
+# Output the counts in descending order.
 awk '{ print $1, $9 }' apache-access.log | sort | uniq -c | sort -nr

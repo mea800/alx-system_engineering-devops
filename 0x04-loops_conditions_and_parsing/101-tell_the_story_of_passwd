@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
-# This script displays the content of the file /etc/passwd with a story.
+# This script reads and displays user information from the /etc/passwd file with a unique and descriptive story.
 
-while IFS=: read -r user
+while IFS=: read -r user_info
 do
-    USERNAME=$(echo "$user" | cut -f 1 -d ':')
-    PASSWORD=$(echo "$user" | cut -f 2 -d ':')
-    USER_ID=$(echo "$user" | cut -f 3 -d ':')
-    GROUP_ID=$(echo "$user" | cut -f 4 -d ':')
-    USER_INFO=$(echo "$user" | cut -f 5 -d ':')
-    HOME_DIR=$(echo "$user" | cut -f 6 -d ':')
-    COMMAND=$(echo "$user" | cut -f 7 -d ':')
+    # Extract each field from the user_info using the delimiter ':'
+    USERNAME=$(echo "$user_info" | cut -f 1 -d ':')
+    PASSWORD=$(echo "$user_info" | cut -f 2 -d ':')
+    USER_ID=$(echo "$user_info" | cut -f 3 -d ':')
+    GROUP_ID=$(echo "$user_info" | cut -f 4 -d ':')
+    USER_INFO=$(echo "$user_info" | cut -f 5 -d ':')
+    HOME_DIR=$(echo "$user_info" | cut -f 6 -d ':')
+    COMMAND=$(echo "$user_info" | cut -f 7 -d ':')
 
-    echo -n "The user $USERNAME is part of the $GROUP_ID gang, "
+    # Display the user information with a unique story
+    echo -n "User $USERNAME belongs to the $GROUP_ID gang, "
     echo -n "lives in $HOME_DIR and rides $COMMAND. "
-    echo -n "$USER_ID's place is protected by the passcode $PASSWORD, "
-    echo "more info about the user here: $USER_INFO"
+    echo -n "Their place is secured by the passcode $PASSWORD, "
+    echo "for more info, see $USER_INFO."
 
 done < "/etc/passwd"
