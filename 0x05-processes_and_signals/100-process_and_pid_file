@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
-# This script displays messages when receiving signals
-
+# Set up PID file for the script
 echo $$ > /var/run/myscript.pid
-trap 'echo "I hate the kill command"; rm -rf /var/run/myscript.pid; exit' SIGTERM
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT
+
+# Handle the SIGTERM signal
+trap 'echo "Terminating script..."; rm -rf /var/run/myscript.pid; exit' SIGTERM
+
+# Handle the SIGINT signal
+trap 'echo "Interrupt signal received!"' SIGINT
+
+# Handle the SIGQUIT signal
+trap 'echo "Quitting script..."; rm -rf /var/run/myscript.pid; exit' SIGQUIT
+
+# Loop forever and print a message every 2 seconds
 while :
 do
     echo "To infinity and beyond"

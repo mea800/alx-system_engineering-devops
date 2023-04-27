@@ -3,8 +3,7 @@
 #include <stdlib.h>
 
 /**
- * infinite_while - used when done creating the parent process and the,
- * zombies.
+ * infinite_while - loops infinitely to keep the program running
  *
  * Return: always 0
  */
@@ -18,8 +17,7 @@ int infinite_while(void)
 }
 
 /**
- * main - entry point for program
- * Description - creates five zombie processes.
+ * main - creates five zombie processes using fork() system call
  *
  * Return: always 0
  */
@@ -27,16 +25,22 @@ int main(void)
 {
 	int i, pid;
 
+	// create five child processes using fork()
 	for (i = 0; i < 5; i++)
 	{
 		pid = fork();
 
+		// child process
 		if (pid == 0)
 		{
-			printf("Zombie process created, PID: %d\n", getpid());
+			// print a message indicating a zombie process has been created
+			printf("Child process created as a zombie, PID: %d\n", getpid());
 			return (0);
 		}
 	}
+
+	// loop infinitely to keep the program running
 	infinite_while();
+
 	return (0);
 }
