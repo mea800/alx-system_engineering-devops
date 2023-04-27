@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# This script displays its own PID.
+# Print the process ID of the current shell
+# The special variable "$$" expands to the PID of the current process.
 
-echo $$
+echo $$ # Print the PID of the current shell
