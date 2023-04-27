@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
-# Set up PID file for the script
+# This script sets up signal handlers to handle different signals
+# Store the process ID of the script in a file
+
 echo $$ > /var/run/myscript.pid
-
-# Handle the SIGTERM signal
-trap 'echo "Terminating script..."; rm -rf /var/run/myscript.pid; exit' SIGTERM
-
-# Handle the SIGINT signal
-trap 'echo "Interrupt signal received!"' SIGINT
-
-# Handle the SIGQUIT signal
-trap 'echo "Quitting script..."; rm -rf /var/run/myscript.pid; exit' SIGQUIT
-
-# Loop forever and print a message every 2 seconds
+# Handle the SIGTERM signal with a message and remove the PID file
+trap 'echo "I hate the kill command"; rm -rf /var/run/myscript.pid; exit' SIGTERM
+# Handle the SIGINT signal with a message
+trap 'echo "Y U no love me?!"' SIGINT
+# Handle the SIGQUIT signal by removing the PID file and exiting
+trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT
+# Run an infinite loop that prints a message every 2 seconds
 while :
 do
     echo "To infinity and beyond"
