@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # This script displays numbers from 1 to 20 with "bad luck" messages for certain values.
-
 # Set the initial counter to 1.
 counter=1
 
