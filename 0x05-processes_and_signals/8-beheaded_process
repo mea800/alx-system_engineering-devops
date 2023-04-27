@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-# This script kills the process 7-highlander.
-
+# Find and terminate the process with the name "7-highlander".
+# Search for processes matching "7-highlander" in the full command line.
 pgrep -f 7-highlander | xargs kill -9
+
+# The above command forcefully terminates the process using a SIGKILL signal.
+# This should be used with caution, as it may result in data loss and prevents
+# the process from gracefully shutting down. Consider using a less severe
+# signal such as SIGTERM or SIGINT instead.
