@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# This script displays the content of the current directory in a list format
-# Where only the part of the name after the first dash is displayed
+# Script: list_files.sh
+# Description: List files in the current directory with names
+# containing a dash, displaying only the part of the name after the dash
 
-for _ in *
+for file in *
 do
-    echo "$_" | cut -f 2 -d '-'
+    # Use the 'cut' command to extract the part of the file name
+    # after the first dash and display it on the console
+    echo "$file" | cut -f 2 -d '-'
 done
