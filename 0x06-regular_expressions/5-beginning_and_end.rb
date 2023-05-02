@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
-# This script accepts one argument and passes it to a regular expression,
-# matching method
-# The regular expression must be exactly matching a string that starts,
-# with h ends with n and can have any single character in between
-
+# Accepts a string argument and matches it against a regular expression
+# The regular expression matches strings that start with 'h', end with 'n', and have any single character in between
+# Apply the regular expression to the argument provided and return all the matches as a single string
 puts ARGV[0].scan(/^h.n$/).join

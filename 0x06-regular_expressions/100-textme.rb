@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
-# This script accepts one argument and passes it to a regular expression,
-# matching method
-# Your script should output: [SENDER],[RECEIVER],[FLAGS]
-# The sender phone number or name (including country code if present)
-# The receiver phone number or name (including country code if present)
-# The flags that were used
+# Parse command line argument for sender, receiver, and flags using regex
+# Extract sender phone number or name (including country code if present)
+# Extract receiver phone number or name (including country code if present)
+# Extract flags that were used
+# Print extracted information in format: [SENDER],[RECEIVER],[FLAGS]
 
 sender = ARGV[0].scan(/(?<=\[from:)[^ ]+(?=\])/).join
 reciever = ARGV[0].scan(/(?<=\[to:)[^ ]+(?=\])/).join
