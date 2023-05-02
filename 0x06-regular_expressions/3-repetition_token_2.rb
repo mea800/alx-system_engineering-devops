@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-# This script accepts one argument and passes it to a regular expression,
-# matching method
-# The regular expression must match the given cases
+# Extracts all substrings from the input string that match the regex pattern
+# Prints the matched substrings concatenated into a single string
 
 puts ARGV[0].scan(/hbt+n/).join

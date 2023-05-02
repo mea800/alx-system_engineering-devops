@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# This script accepts one argument and passes it to a regular expression,
-# matching method
-# The regular expression must match the given cases
-
+# Extracts all occurrences of "hbtn" or "htn" from a given string argument
+# Prints the concatenated matches as a single string
 puts ARGV[0].scan(/hb?tn/).join
