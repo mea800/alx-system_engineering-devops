@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Script that displays all active IPv4 IPs on the machine it’s executed on.
+# Get all active IPv4 IPs of the machine
+# and print the first one
 
-hostname -I | cut -d' ' -f1 ; hostname -i
+hostname -I | cut -d' ' -f1
