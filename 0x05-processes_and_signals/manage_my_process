@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# An infinite loop that writes a message to a file every 2 seconds
+
+while :
+do
+	# Append "I am alive" message to the file
+	echo 'I am alive' >> /tmp/my_process
+	
+	# Wait for 2 seconds before continuing the loop
+	sleep 2
+done

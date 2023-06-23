@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Get all active IPv4 IPs of the machine
+# and print the first one
+
+hostname -I | cut -d' ' -f1

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Display listening ports with associated processes.
+
+netstat -lp # Execute netstat command to show listening ports and their processes.

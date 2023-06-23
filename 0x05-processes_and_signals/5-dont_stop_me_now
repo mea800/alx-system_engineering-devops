@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Stop the "4-to_infinity_and_beyond" process.
+# The "pkill" command sends a signal to stop all processes that match the specified pattern.
+
+pkill -f 4-to_infinity_and_beyond  # Terminate any running instances of the "4-to_infinity_and_beyond" process.

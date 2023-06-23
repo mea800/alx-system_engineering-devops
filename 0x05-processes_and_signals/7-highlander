@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script displays a message repeatedly with a delay.
+# It also sets up a signal handler to respond to a SIGTERM signal.
+# Define the signal handler to execute when a SIGTERM signal is received.
+trap 'echo "I am invincible!!!"' SIGTERM
+
+# Loop indefinitely and print the message with a delay of 2 seconds.
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script lists all currently running processes.
+# The "ps" command is used to retrieve information about running processes.
+# The "auxf" options are used to display a detailed list of all processes.
+ps auxf
